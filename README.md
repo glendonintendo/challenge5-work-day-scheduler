@@ -34,12 +34,13 @@ THEN the saved events persist
 ```
 ### Grading Criteria
 #### Technical Acceptance Criteria: 40% <!-- omit in toc -->
-- [ ] Current day is displayed at the top of the web page
-- [ ] Page contains time blocks for standard business hours
-- [ ] Time blocks will color code by past, present, future
-- [ ] Time blocks can be editied with text content when clicked
+- [x] Current day is displayed at the top of the web page
+- [x] Page contains time blocks for standard business hours
+- [x] Time blocks will color code by past, present, future
+- [ ] Time blocks can be edited with text content when clicked
 - [ ] Contents of time blocks are saved in local storage
 - [ ] Events saved in local storage populate the page when refreshed
+- [x] Uses Moment.js library to work with date and time
 #### Deployment: 32% <!-- omit in toc -->
 - [ ] Application deployed at live URL
 - [ ] Application loads with no errors
