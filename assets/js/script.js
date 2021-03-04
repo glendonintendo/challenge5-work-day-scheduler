@@ -1,20 +1,10 @@
 const dateEl = document.querySelector("#currentDay");
-let descriptions = {};
 
 const loadDescriptions = function () {
-    descriptions = JSON.parse(localStorage.getItem("descriptions"));
-    if (!descriptions) {
-        descriptions = {};
-    }
-    
-    for (const [key, value] of Object.entries(descriptions)) {
+    for (const [key, value] of Object.entries(localStorage)) {
         $(`#${key}`).val(value);
     }
 };
-
-const saveDescriptions = function() {
-    localStorage.setItem("descriptions", JSON.stringify(descriptions));
-}
 
 const auditDate = function() {
     let currentDate = moment().format('dddd, MMMM Do');
@@ -47,8 +37,8 @@ $(".saveBtn").on("click", function() {
     let thisTime = $(this).siblings(".hour").text();
     let thisText = $(this).siblings(".description").val();
 
-    descriptions[thisTime] = thisText;
-    saveDescriptions();
+    localStorage.setItem(thisTime, thisText)
+    console.log(localStorage[thisTime]);
 })
 
 setInterval(function() {
